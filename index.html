@@ -1,0 +1,26 @@
+<canvas id="ctx" style="border:solid"></canvas>
+<script>
+var ctx = document.getElementById('ctx').getContext('2d')
+var player = {}
+player.x = 0
+player.y = 0
+document.onkeydown = function(event){
+if(event.keyCode === 68){
+player.x +=1
+}
+if(event.keyCode === 65){
+player.x -=1
+}
+if(event.keyCode === 83){
+player.y +=1
+}
+if(event.keyCode === 87){
+player.y -=1
+}
+}
+setInterval(function(){
+ctx.clearRect(0,0,500,500)
+ctx.strokeRect(player.x,player.y,20,20)
+
+},33)
+</script>
